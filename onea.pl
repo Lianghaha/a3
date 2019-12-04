@@ -2,7 +2,7 @@ bot sub [s, lexical, phrase].
     phrase sub [vpsg, vppl, pp, npsg, nppl, np].
     lexical sub [nprp, npl, vpl, vsg, det, nsg, npl, p].
 
-Fido ---> nprp.
+fido ---> nprp.
 biscuits ---> npl.
 feed ---> vpl.
 feeds ---> vsg.
