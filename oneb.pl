@@ -6,6 +6,7 @@ bot sub [cat, number_feature].
     number_feature sub [sg, pl].
 
 
+% The number of a VP is determinated by V instead of NP
 v_np__vp rule
     (vp, number:Number) ===>
     cat> (v, number:Number),
@@ -16,6 +17,7 @@ p_np__pp rule
     cat> p,
     cat> np.
 
+% Only pluras can form NP without Det
 n__np rule
     (np, number:pl) ===>
     cat> (n, number:pl).
@@ -31,6 +33,7 @@ det_n_pp__np rule
     cat> (n, number:Number),
     cat> pp.
 
+% Only pluras can form NP without Det
 n_pp__np rule
     (np, number:pl) ===>
     cat> (n, number:pl),
@@ -45,6 +48,8 @@ biscuits ---> (n, number:pl).
 dog ---> (n, number:sg).
 feed ---> (v, number:pl).
 feeds ---> (v, number:sg).
+
+%NPRP has to go with singular verbs
 fido ---> (np, number:sg).
 puppies ---> (n, number:pl).
 the ---> det.
