@@ -1,12 +1,12 @@
 bot sub [cat, number_feature].
-    cat sub [has_number, det, p, s, nprp].
+    cat sub [has_number, det, p, pp, s].
         has_number sub [n, v, np, vp] intro [number:number_feature].
-    number_feature sub [sg, pl].
+    number_feature sub [sg, pl, special].
 
-fido ---> nprp.
+fido ---> (np, number:special).
 biscuits ---> (n, number:pl).
 feed ---> (v, number:pl).
-feeds ---> (v, number:sg).
+feeds ---> (v, number:(sg, special)).
 the ---> det.
 dog ---> (n, number:sg).
 puppies ---> (n, number:pl).
@@ -15,25 +15,16 @@ with ---> p.
 v_np__vp rule
     (vp, number:Number) ===>
     cat> (v, number:Number),
-    cat> n.
+    cat> np.
 
-p_n__pp rule
+p_np__pp rule
     pp ===>
     cat> p,
-    cat> n.
-
-nprp__np rule
-    (np, number:sg) ===>
-    cat> nprp.
+    cat> np.
 
 n__np rule
     (np, number:pl) ===>
     cat> (n, number:pl).
-
-n_pp__np rule
-    (np, number:pl) ===>
-    cat> (n, number:pl),
-    cat> pp.
 
 det_n__np rule
     (np, number:Number) ===>
@@ -46,7 +37,13 @@ det_n_pp__np rule
     cat> (n, number:Number),
     cat> pp.
 
+n_pp__np rule
+    (np, number:pl) ===>
+    cat> (n, number:pl),
+    cat> pp.
+
 np_vp__s rule
     s ===>
     cat> (np, number:Number),
     cat> (vp, number:Number).
+
