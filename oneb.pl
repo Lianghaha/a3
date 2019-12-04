@@ -1,12 +1,12 @@
 bot sub [cat, number_feature].
     cat sub [has_number, det, p, pp, s].
         has_number sub [n, v, np, vp] intro [number:number_feature].
-    number_feature sub [sg, pl, special].
+    number_feature sub [sg, pl].
 
-fido ---> (np, number:special).
+fido ---> (np, number:sg).
 biscuits ---> (n, number:pl).
 feed ---> (v, number:pl).
-feeds ---> (v, number:(sg, special)).
+feeds ---> (v, number:sg).
 the ---> det.
 dog ---> (n, number:sg).
 puppies ---> (n, number:pl).
