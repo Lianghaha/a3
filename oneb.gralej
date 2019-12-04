@@ -1,0 +1,43 @@
+<'fido feeds the dog with biscuits'
+{ :'np_vp__s:fido feeds the dog with biscuits'
+    s
+    { :'lexicon:fido'
+        np(
+            number: $1 = sg)
+    }
+    { :'v_np__vp:feeds the dog with biscuits'
+        vp(
+            number: $1)
+        { :'lexicon:feeds'
+            v(
+                number: $1)
+        }
+        { :'det_n_pp__np:the dog with biscuits'
+            np(
+                number: $6 = sg)
+            { :'lexicon:the'
+                det
+            }
+            { :'lexicon:dog'
+                n(
+                    number: $6)
+            }
+            { :'p_np__pp:with biscuits'
+                pp
+                { :'lexicon:with'
+                    p
+                }
+                { :'n__np:biscuits'
+                    np(
+                        number: pl)
+                    { :'lexicon:biscuits'
+                        n(
+                            number: pl)
+                    }
+                }
+            }
+        }
+    }
+}
+>
+
