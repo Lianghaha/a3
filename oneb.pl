@@ -1,81 +1,52 @@
-bot sub [s, lexical, phrase].
-    phrase sub [vpsg, vppl, pp, npsg, nppl, np].
-    lexical sub [nprp, npl, vpl, vsg, det, nsg, npl, p].
+bot sub [cat, number_feature].
+    cat sub [has_number, det, p, s, nprp].
+        has_number sub [n, v, np, vp] intro [number:number_feature].
+    number_feature sub [sg, pl].
 
 fido ---> nprp.
-biscuits ---> npl.
-feed ---> vpl.
-feeds ---> vsg.
+biscuits ---> (n, number:pl).
+feed ---> (v, number:pl).
+feeds ---> (v, number:sg).
 the ---> det.
-dog ---> nsg.
-puppies ---> npl.
+dog ---> (n, number:sg).
+puppies ---> (n, number:pl).
 with ---> p.
 
+v_np__vp rule
+    (vp, number:Number) ===>
+    cat> (v, number:Number),
+    cat> n.
 
-vsg_np__vpsg rule
-    vpsg ===>
-    cat> vsg,
-    cat> np.
-
-vpl_np__vppl rule
-    vppl ===>
-    cat> vpl,
-    cat> np.
-
-p_np__pp rule
+p_n__pp rule
     pp ===>
     cat> p,
-    cat> np.
+    cat> n.
 
-nprp__npsg rule
-    npsg ===>
+nprp__np rule
+    (np, number:sg) ===>
     cat> nprp.
 
-det_nsg__npsg rule
-    npsg ===>
-    cat> det,
-    cat> nsg.
+n__np rule
+    (np, number:pl) ===>
+    cat> (n, number:pl).
 
-det_nsg_pp__npsg rule
-    npsg ===>
-    cat> det,
-    cat> nsg,
+n_pp__np rule
+    (np, number:pl) ===>
+    cat> (n, number:pl),
     cat> pp.
 
-det_npl__nppl rule
-    nppl ===>
+det_n__np rule
+    (np, number:Number) ===>
     cat> det,
-    cat> npl.
+    cat> (n, number:Number).
 
-det_npl_pp__nppl rule
-    nppl ===>
+det_n_pp__np rule
+    (np, number:Number) ===>
     cat> det,
-    cat> npl,
+    cat> (n, number:Number),
     cat> pp.
 
-npl__nppl rule
-    nppl ===>
-    cat> npl.
-
-npl_pp__nppl rule
-    nppl ===>
-    cat> npl,
-    cat> pp.
-
-npsg__np rule
-    np ===>
-    cat> npsg.
-
-nppl__np rule
-    np ===>
-    cat> nppl.
-
-npsg_vpsg__s rule
+np_vp__s rule
     s ===>
-    cat> npsg,
-    cat> vpsg.
-
-nppl_vppl__s rule
-    s ===>
-    cat> nppl,
-    cat> vppl.
+    cat> (np, number:Number),
+    cat> (vp, number:Number).
