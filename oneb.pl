@@ -1,16 +1,10 @@
+% Name: Jialiang Zhang, Login ID: zhan2890, Student ID: 1002674073.
+
 bot sub [cat, number_feature].
     cat sub [has_number, det, p, pp, s].
         has_number sub [n, v, np, vp] intro [number:number_feature].
     number_feature sub [sg, pl].
 
-fido ---> (np, number:sg).
-biscuits ---> (n, number:pl).
-feed ---> (v, number:pl).
-feeds ---> (v, number:sg).
-the ---> det.
-dog ---> (n, number:sg).
-puppies ---> (n, number:pl).
-with ---> p.
 
 v_np__vp rule
     (vp, number:Number) ===>
@@ -47,3 +41,11 @@ np_vp__s rule
     cat> (np, number:Number),
     cat> (vp, number:Number).
 
+biscuits ---> (n, number:pl).
+dog ---> (n, number:sg).
+feed ---> (v, number:pl).
+feeds ---> (v, number:sg).
+fido ---> (np, number:sg).
+puppies ---> (n, number:pl).
+the ---> det.
+with ---> p.

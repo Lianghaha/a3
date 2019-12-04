@@ -1,15 +1,8 @@
+% Name: Jialiang Zhang, Login ID: zhan2890, Student ID: 1002674073.
+
 bot sub [s, lexical, phrase].
     phrase sub [vpsg, vppl, pp, npsg, nppl, np].
     lexical sub [nprp, npl, vpl, vsg, det, nsg, npl, p].
-
-fido ---> nprp.
-biscuits ---> npl.
-feed ---> vpl.
-feeds ---> vsg.
-the ---> det.
-dog ---> nsg.
-puppies ---> npl.
-with ---> p.
 
 
 vsg_np__vpsg rule
@@ -79,3 +72,12 @@ nppl_vppl__s rule
     s ===>
     cat> nppl,
     cat> vppl.
+
+biscuits ---> npl.
+dog ---> nsg.
+feed ---> vpl.
+feeds ---> vsg.
+fido ---> nprp.
+puppies ---> npl.
+the ---> det.
+with ---> p.
