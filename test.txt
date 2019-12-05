@@ -1,0 +1,13 @@
+rec[fido,feeds,the,dog,with,biscuits]
+rec[fido,feeds,the,dog,with,the,biscuits]
+rec[biscuits,feed,the,dog,with,biscuits]
+rec[the,dog,feeds,the,dog,with,biscuits]
+rec[the,dog,feeds,the,dog]
+rec[the,dog,feeds,biscuits]
+
+
+rec[fido,feed,the,dog,with,biscuits]
+rec[the,dog,feed,the,dog,with,biscuits]
+rec[fido,feeds,dog,with,biscuits]
+rec[dog,feeds,the,dog,with,biscuits]
+rec[the,fido,feeds,the,dog,with,biscuits]

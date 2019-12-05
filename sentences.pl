@@ -19,7 +19,6 @@ test_sent([the,dog,feeds,biscuits]).
 
 
 
-
 % Incorrect:
 
 % NPRP should form S with singular VP
@@ -34,3 +33,5 @@ test_sent([dog,feeds,the,dog,with,biscuits]).
 
 % NPRP cannot form NP with Det
 test_sent([the,fido,feeds,the,dog,with,biscuits]).
+
+

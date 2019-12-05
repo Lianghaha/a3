@@ -1,0 +1,16 @@
+% Name: Jialiang Zhang, Login ID: zhan2890, Student ID: 1002674073.
+
+ii. The student appeared to sleep.
+'The student' is the Theme of 'appeared'
+'The student' is the Experiencer of 'sleep'
+
+iii. The student promised the teacher to sleep.
+'The student' is the Agent of 'promised'
+'the teacher' is the Beneficiary of 'promised'
+'to sleep' is the Theme of 'promised'
+'The student' is the Experiencer of 'sleep'
+
+iv. The student expected the teacher to sleep.
+'The student' is the Agent of 'expected'
+'the teacher to sleep' is the Theme of 'expected'
+'the teacher' is the Experiencer of 'sleep'
